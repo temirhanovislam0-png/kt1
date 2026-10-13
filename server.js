@@ -21,14 +21,23 @@ mongoose.connect("mongodb://localhost:27017/books").then(() => {
 // GET /books — получить все книги
 app.get("/books",async(req , res)=>{
     try{
-        const products = await Book.find()
+        const books = await Book.find()
         res.json(books)
     }catch(error){
         res.send("Ошибкак при получении книги:" + error)
     }
 })
 
-
+// GET /books — получить все книги
+app.get("/book/:id",async(req , res)=>{
+    try{
+        const { id } = req.params
+        const book = await Book.find(id)
+        res.json(book)
+    }catch(error){
+        res.send("Ошибкак при получении книги:" + error)
+    }
+})
 
 //POST /addbook - добавить новую книгу
 app.post("/addbook",async(req,res)=>{
