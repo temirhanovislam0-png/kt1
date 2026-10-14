@@ -56,7 +56,7 @@ app.post("/addbook",async(req,res)=>{
 });
 
 
-// PUT /product/:id — полная замена товара по id
+// PUT /book/:id — полная замена товара по id
 app.put("/book/:id",async (req,res) => {
      try{
         const{ id }= req.params
@@ -79,7 +79,7 @@ app.put("/book/:id",async (req,res) => {
 
 
 
-// PATCH /product/:id — частичное обновление товара по id
+// PATCH /book/:id — частичное обновление товара по id
 app.patch("/book/:id", async (req, res)=>{
     try{
         const{ id } = req.params
@@ -101,7 +101,7 @@ app.patch("/book/:id", async (req, res)=>{
 
 
 
-// DELETE /product/:id — удалить товар по id
+// DELETE /book/:id — удалить товар по id
 
 app.delete("/book/:id", async (req, res) => {
     try {
